@@ -59,7 +59,7 @@ def hsv_to_rgb(h, s, v):
 
 def update_led():
     global color, color2
-    add = 10
+    add = 5
     while color < 360:
         for i in range(0, 8):
             time.sleep_ms(200)
@@ -71,6 +71,7 @@ def update_led():
             strip[stripe_3[i]] = farbe
             strip.write()
         for i in range(13, 7, -1):
+            time.sleep_ms(200)
             color2 -= 1
             color2 %= 360
             farbe = hsv_to_rgb(color2 - (add * (len(stripe_1) - i)), 1.0, 1.0)
@@ -78,7 +79,6 @@ def update_led():
             strip[stripe_2[i]] = farbe
             strip[stripe_3[i]] = farbe
             strip.write()
-
     color = color * - 1
     color2 = color2 * - 1
 
