@@ -15,6 +15,7 @@ stripe_2 = 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27
 stripe_3 = 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41
 # Initialisierung des LED-Streifens
 strip = neopixel.NeoPixel(machine.Pin(LED_PIN), NUM_LEDS)
+bright = {0: 0.0, 1: 0.02, 2: 0.1, 3: 0.3, 4: 0.7}
 
 '''
 H: Farbton (Hue) im Bereich von 0 bis 360 Grad
@@ -58,63 +59,28 @@ def hsv_to_rgb(h, s, v):
 
 def update_led():
     global color, color2
+    add = 10
     while color < 360:
-        for i in range(0, 14):
-            time.sleep_ms(100)
+        for i in range(0, 8):
+            time.sleep_ms(200)
             color += 1
             color %= 360
+            farbe = hsv_to_rgb(color + (i * add), 1.0, bright.get(i, 1))
+            strip[stripe_1[i]] = farbe
+            strip[stripe_2[i]] = farbe
+            strip[stripe_3[i]] = farbe
+            strip.write()
+        for i in range(13, 7, -1):
             color2 -= 1
             color2 %= 360
-            if i == 0:
-                farbe = hsv_to_rgb(color, 1.0, 0)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-            elif i == 1:
-                farbe = hsv_to_rgb(color + 10, 1.0, 0.1)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-            elif i == 2:
-                farbe = hsv_to_rgb(color + 10, 1.0, 0.7)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-            elif i == 3:
-                farbe = hsv_to_rgb(color + 10, 1.0, 0.7)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-            elif i == 4:
-                farbe = hsv_to_rgb(color2 - 10, 1.0, 1.0)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-            elif i == 5:
-                farbe = hsv_to_rgb(color2 - 10, 1.0, 1.0)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-            elif i == 6:
-                farbe = hsv_to_rgb(color2 - 10, 1.0, 1.0)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-            else:
-                farbe = hsv_to_rgb(color2 - 10, 1.0, 1.0)
-                strip[stripe_1[i]] = farbe
-                strip[stripe_2[i]] = farbe
-                strip[stripe_3[i]] = farbe
-                strip.write()
-    color *= - 1
-    color2 *= - 1
+            farbe = hsv_to_rgb(color2 - (add * (len(stripe_1) - i)), 1.0, 1.0)
+            strip[stripe_1[i]] = farbe
+            strip[stripe_2[i]] = farbe
+            strip[stripe_3[i]] = farbe
+            strip.write()
+
+    color = color * - 1
+    color2 = color2 * - 1
 
 
 # Hauptprogramm
