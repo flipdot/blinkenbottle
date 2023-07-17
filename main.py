@@ -6,7 +6,7 @@ import neopixel
 # LED-Streifen-Konfiguration
 LED_PIN = 26
 NUM_LEDS = 42  # Gesamtzahl der LEDs auf dem Streifen
-NUM_COLORS = 1024
+NUM_COLORS = 360
 color = 0
 color2 = 360
 # Anzahl der LEDs in jedem virtuellen Teil
