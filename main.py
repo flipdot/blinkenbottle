@@ -5,17 +5,17 @@ import neopixel
 
 # LED-Streifen-Konfiguration
 LED_PIN = 26
-NUM_LEDS = 42  # Gesamtzahl der LEDs auf dem Streifen
+NUM_LEDS = 36  # Gesamtzahl der LEDs auf dem Streifen
 NUM_COLORS = 360
 color = 0
 color2 = 360
 # Anzahl der LEDs in jedem virtuellen Teil
-stripe_1 = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-stripe_2 = 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27
-stripe_3 = 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41
+stripe_1 = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+stripe_2 = 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
+stripe_3 = 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
 # Initialisierung des LED-Streifens
 strip = neopixel.NeoPixel(machine.Pin(LED_PIN), NUM_LEDS)
-bright = {0: 0.0, 1: 0.02, 2: 0.1, 3: 0.3, 4: 0.7}
+bright = {0: 0.2, 1: 0.5, 2: 0.7, 3: 1.0}
 
 '''
 H: Farbton (Hue) im Bereich von 0 bis 360 Grad
@@ -61,7 +61,7 @@ def update_led():
     global color, color2
     add = 5
     while color < 360:
-        for i in range(0, 8):
+        for i in range(0, 7):
             time.sleep_ms(200)
             color += 1
             color %= 360
@@ -70,7 +70,7 @@ def update_led():
             strip[stripe_2[i]] = farbe
             strip[stripe_3[i]] = farbe
             strip.write()
-        for i in range(13, 7, -1):
+        for i in range(11, 7, -1):
             time.sleep_ms(200)
             color2 -= 1
             color2 %= 360
