@@ -61,7 +61,7 @@ def update_led():
     global color, color2
     add = 5
     while color < 360:
-        for i in range(0, 7):
+        for i in range(0, 5):
             time.sleep_ms(200)
             color += 1
             color %= 360
@@ -70,7 +70,7 @@ def update_led():
             strip[stripe_2[i]] = farbe
             strip[stripe_3[i]] = farbe
             strip.write()
-        for i in range(11, 7, -1):
+        for i in range(11, 6, -1):
             time.sleep_ms(200)
             color2 -= 1
             color2 %= 360
