@@ -10,8 +10,8 @@ I took the idea and implemented it on an ESP 8266, with MicroPython.
 * 1x ESP 8266, ESP32, RaspberryPi Pico. Or something else with which you can control the LED and on which MicroPython runs.
 * and of course a diffuser that you tip into the bottle, I experimented with hot glue, paraffin and silicone.
   
-Glue the LED strip to the round rod from three sides (pay attention to the directional arrow), preferably down , up, down. Leave space at the top of the rod for the microcontroller, which you can then attach to it (small cable ties work best).
-Now sink the whole thing into the bottle with the diffuser. If it's hard by now, you've done something wrong in terms of timing, so hurry up next time!
+Glue the LED strip to the round rod from three sides (pay attention to the directional arrow), preferably down , up, down. Leave space at the top of the rod for the microcontroller, which you can then attach to it (small cable ties work best). Now get down to the silly soldering work.
+After that, sink the whole thing into the bottle with the diffuser. If it's hard by now, you've done something wrong in terms of timing, so hurry up next time!
 Adapt the code to your microcontroller and the length of the LED, improve the code and send it to me by all means!
 Otherwise, hook this thing up to power, crack open a drink, sit back and enjoy the show!
 
