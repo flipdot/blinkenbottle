@@ -1,6 +1,6 @@
 **Blinkenbottle** is a project based on an idea by [@phlmn] (https://github.com/orgs/flipdot/people/phlmn) & [@rbnis] (https://github.com/orgs/flipdot/people/rbnis).
 The original project was realised on an Arduino, with Fast-LED. 
-I took the idea and implemented it on an ESP 8266, with MicroPython.
+I took the idea and implemented it on an ESP 8266, with MicroPython. Big κῦδος goes to [@malled] (https://github.com/malled2002) for all the support and tips whenever I had knots in my brain! Thank you!
 
 **_Instructions for rebuilding, you need:_**
 
