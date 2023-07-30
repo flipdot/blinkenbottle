@@ -15,10 +15,10 @@ After that, sink the whole thing into the bottle with the diffuser. If it's hard
 Adapt the code to your microcontroller and the length of the LED, improve the code and send it to me by all means!
 Otherwise, hook this thing up to power, crack open a drink, sit back and enjoy the show!
 
-![Exampe 1](./docs/blinkenbottle_ - 1.jpeg)
-![Exampe 2](./docs/blinkenbottle_ - 2.jpeg)
-![Exampe 3](./docs/blinkenbottle_ - 3.jpeg)
-![Exampe 4](./docs/blinkenbottle_ - 4.jpeg)
+![Exampe 1](./docs/blinkenbottle_-1.jpeg)
+![Exampe 2](./docs/blinkenbottle_-2.jpeg)
+![Exampe 3](./docs/blinkenbottle_-3.jpeg)
+![Exampe 4](./docs/blinkenbottle_-4.jpeg)
 
 
 _Plans for the next version:_
