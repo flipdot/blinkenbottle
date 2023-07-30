@@ -15,11 +15,16 @@ After that, sink the whole thing into the bottle with the diffuser. If it's hard
 Adapt the code to your microcontroller and the length of the LED, improve the code and send it to me by all means!
 Otherwise, hook this thing up to power, crack open a drink, sit back and enjoy the show!
 
-![Exampe 1](./docs/IMG_1191.jpeg)
-![Exampe 2](./docs/IMG_1192.jpeg)
+![Exampe 1](./docs/blinkenbottle_ - 1.jpeg)
+![Exampe 2](./docs/blinkenbottle_ - 2.jpeg)
+![Exampe 3](./docs/blinkenbottle_ - 3.jpeg)
+![Exampe 4](./docs/blinkenbottle_ - 4.jpeg)
 
 
-Plans for the next version:
+_Plans for the next version:_
 Put a cap on the bottle that integrates the USB port.
 Connect a potentiometer (and of course adjust the code accordingly, otherwise nothing will change) to adjust the brightness.
 Find other materials for the bottle to be able to save the diffuser if necessary.
+
+_Bugs to hunt:_
+whenever the colour changes to red, it jerks and I still have no idea why
